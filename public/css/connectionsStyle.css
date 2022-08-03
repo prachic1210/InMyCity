@@ -1,0 +1,141 @@
+.card-left{
+
+    float: left;
+    width: 30%;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    border: 1px black solid;
+    border-radius: 30px;
+    opacity: 0.6;
+    margin-left: 1%;
+    height: 61%;
+    background: url(../images/mic.jpeg);
+    background-size: contain;
+    margin-left: 2.5%;
+    margin-top: 1%;
+  }
+
+  .card-mid{
+    float:left;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    border: 1px black solid;
+    border-radius: 5px;
+    opacity: 0.6;
+    margin-left: 1%;
+    height: 61%;
+    background: url(../images/socialHelp.jpeg);
+    background-size:contain;
+    margin-left:2.5%;
+    margin-top: 1%;
+  }
+
+  .card-right {
+    float:left;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    border: 1px black solid;
+    border-radius: 5px;
+    opacity: 0.6;
+    margin-left: 1%;
+    height: 61%;
+    background: url(../images/travel.png);
+    background-size:contain;
+    margin-left:2.5%;
+    margin-top: 1%;
+  }
+
+.containerCategories{
+    width:98%;
+}
+  .cardCategory-left{
+    background: url(../images/socialHelp.jpeg);
+  }
+
+ .backgroundContext{
+     margin-top: 23%;
+     list-style: none;
+     text-align: center;
+ }
+
+.cardTitle{
+    color: white; 
+    font: bold 24px/45px Helvetica, Sans-Serif; 
+    letter-spacing: -1px;  
+    background: rgb(0, 0, 0); 
+    background: rgba(0, 0, 0, 0.7);
+    padding: 6px; 
+    text-align: center;
+    width:97%;
+ }
+
+.cardDetail{
+    color: white; 
+    font: bold 24px/45px Helvetica, Sans-Serif; 
+    letter-spacing: -1px;  
+    background: rgb(0, 0, 0); 
+    background: rgba(0, 0, 0, 0.7);
+    padding: 6px; 
+ }
+
+  .header {
+    height: 30%;
+    color: white;
+    text-align: center;
+    
+  }
+  
+  .container {
+    padding: 2px 16px;
+  }
+
+  .submitButton{
+  background:#4e3d3d;
+  color:bisque;
+  border-style:outset;
+  border-color:grey;
+  height:50px;
+  width:30%;
+  font:15px arial,sans-serif;
+  text-shadow:none;
+  margin-left: 28%;
+  }
+
+  .submitbutton {
+
+    border-radius: 5px;
+    box-shadow:2px 2px 2px grey;
+	opacity: 0.8;
+    margin-left:35%;
+}
+
+.submitButton a{
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    color: white;
+    padding: 4px 3px;
+}
+
+.card-right li{
+    list-style: none;
+}
+
+.card-left:hover{
+    transform: scale(1.02,1.04);
+}
+
+.card-right:hover{
+    transform: scale(1.02,1.04);
+}
+
+.card-mid:hover{
+    transform: scale(1.02,1.04);
+}
+
+.cardDetail a{
+    color:white;
+}

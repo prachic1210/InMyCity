@@ -1,0 +1,48 @@
+<%-include('../partials/header.ejs') %>
+    <section class='content'>
+        <div class='formLayout'>
+            <form method='POST' action='/connections/<%=connection.id%>/?_method=PUT'>
+                <div class='formLabels'>
+                    <ul>
+                        <li> <label for='topic'>Topic</label></li>
+                        <li> <label for='tagLine'>TagLine</label></li>
+                        <li><label for='name'>Title</label></li>
+                        <li> <label for='hostName'>Host</label></li>
+                        <li> <label for='details'>Decription</label></li>
+                        <li> <label for='address'>Where</label></li>
+                        <li> <label for='date'>When</label></li>
+                        <li> <label for='startTime'>Start</label></li>
+                        <li> <label for='endTime'>End</label></li>
+                        <li> <label for='image'>Add image url for the event</label></li>
+                    </ul>
+                </div>
+                <div class='formData'>
+                    <ul>
+                        <li><input type='text' id='topic' name='topic' class='topic' value='<%= connection.topic%>' required>
+                        </li>
+                        <li><input type='text' id='tagLine' name='tagLine' class='tagLine'
+                                value='<%= connection.tagLine%>' required></li>
+                        <li><input type='text' id='name' class='name' name='name' value='<%= connection.name%>' required></li>
+                        <li><input type='text' id='details' class='details' name='details'
+                                value='<%= connection.details%>' minlength='10' required>
+                        </li>
+                        <li><input type='text' id='address' class='address' name='address'
+                                value='<%= connection.address%>' required></li>
+                        <li><input type='date' id='date' class='date' name='date' value='<%= connectionDate%>' required></li>
+                        <li><input type='time' id='startTime' class='startTime' name='startTime'
+                                value='<%= connection.startTime%>' required>
+                        </li>
+                        <li><input type='time' id='endTime' class='endTime' name='endTime'
+                                value='<%= connection.endTime%>' required></li>
+                        <li><input type='text' id='image' name='image' class='image' value='<%= connection.image%>' required>
+                        </li>
+                        <li> <button type='submit' class='submitButton'> Update Event </button></li>
+                    </ul>
+
+                </div>
+                <br> <br> <br><br><br><br>
+            </form>
+        </div>
+    </section>
+    <br /> <br />
+    <%-include('../partials/footer.ejs') %>

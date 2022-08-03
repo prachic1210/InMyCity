@@ -1,0 +1,33 @@
+<%-include('../partials/header.ejs') %>
+<div class = "content">
+    <form action = '/users/login' class='' method = 'POST'>
+        <div class='Logincontainer'>
+            <label for="emailLogin"><strong>Email Address</strong></label>
+            <input type="email" id="emailLogin" name="email" class = "emailLogin" required>
+            <br>
+            <br>
+            <label for="passwordLogin"><strong>Password</strong></label>
+            <input type="password" id="passwordLogin" name="password" class = "passwordLogin" minlength="8" maxlength="64" required>
+            <br>
+            <br>
+            <button type='submit' class="submitButtonLogin">Login</button>
+        </div>
+
+        <!-- <table>
+            <tr>
+                <td><label for="email">Email Address</label></td>
+                <td><input type="email" id="email" name="email" class = "fixed-width" required></td>
+            </tr>
+            <tr>
+                <td><label for="password">Password</label></td>
+                <td><input type="password" id="password" name="password" class = "fixed-width" minlength="8" maxlength="64" required></td>
+            </tr>
+            
+            <tr>
+                <td colspan="2" class = "align-right"><button class="submitButton">Login</button></td>
+            </tr>
+        </table>         -->
+    </form>
+
+    </div>
+<%-include('../partials/footer.ejs') %>

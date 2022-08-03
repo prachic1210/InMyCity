@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <link rel="stylesheet" type="text/css" href="/css/indexStyle.css" />
+    <title>InMyCity</title>
+</head>
+
+<body>
+    <div class='mainContainer'>
+        <header>
+            <div class='mainNav'>
+                <div class='primaryNav'>
+                    <a href='/'><img src='/images/logo.jpeg' alt='In my city' class='logoNav' /></a>
+                    <nav>
+                        <ul>
+                            <%if(!user) {%>
+                               
+                               <li><a href='/users/new'>Sign Up</a></li> 
+                               <li> <a href='/users/login'>Login</a></li>
+                            <%} else {%>
+                                
+                                <li><a href='/connections/new'>Create Event</a></li>
+                                <li><a href='/users/profile'>Profile</a></li>
+                               <li><a href='/users/logout'>Logout</a></li> 
+                               
+                            <%}%>
+                            
+                         
+                            
+                            
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class='subNav'>
+                <div class='secondaryNav'>
+                    <ul>
+                        <li>
+                            <form action='/connections' method='GET'>
+                                <button type='submit' class='categories' value='Categories'>
+                                    Categories </button>
+                            </form>
+                        </li>
+
+                        <li>
+                            <%if(firstName && lastName) {%>
+                                <span class='profileName' >
+                                  Welcome  <%= firstName + ' ' + lastName %> ! </span>
+                            
+                                <%}%>  
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+
+        <% if(errorMessages.length > 0) {%>
+            <% errorMessages.forEach(message=>{%>
+                <div class='error'>
+                    <%=message%>
+                </div>
+                <%});%>
+                    <%}%>
+        
+                        <% if(successMessages.length > 0) {%>
+        
+                            <% successMessages.forEach(message=>{%>
+                                <div class='success'>
+                                    <%=message%>
+                                </div>
+                                <%});%>
+                                    <%}%>

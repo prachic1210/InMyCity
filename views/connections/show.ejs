@@ -1,0 +1,69 @@
+<%-include('../partials/header.ejs') %>
+    <section class='content'>
+        <div class='categoryDetail'>
+            <table class='category_details'>
+                <tr>
+                    <td class='categoryTitleDesc'>
+                        <h2><b><i>
+                                    <%=connect.name %>
+                                </i></b></h2>
+                        <hr>
+                    </td>
+                    <td class='categoryButton'>
+                        <%if(user == connect.hostName._id){%>
+                        <form>
+                            <p class='textDetails'><strong><%= count%> people are going. </strong> </p>
+                            <h2><button type='submit' class='submitButtonY' formmethod='GET'
+                                    formaction='/connections/<%=connect.id%>/edit'> Update </button>
+                                <button type='submit' class='submitButtonY' formmethod='POST'
+                                    formaction='/connections/<%=connect.id%>/?_method=DELETE'> Delete </button>
+                            </h2>
+                        </form>
+                        <% } else{  %>
+                            <form> 
+                             <p class='textDetails'><strong><%= count%> people are going. </strong> </p>
+                            <p class='textDetails'> <strong> RSVP to attend! Click below to record a response. </strong>  </p> 
+                                 <h2><button type='submit' class='submitButtonY' formmethod='POST'
+                                        formaction='/connections/<%=connect.id%>/rsvp/Yes'> Yes </button>
+                                    <button type='submit' class='submitButtonY' formmethod='POST'
+                                        formaction='/connections/<%=connect.id%>/rsvp/No'> No </button>
+                                        <button type='submit' class='submitButtonY' formmethod='POST'
+                                        formaction='/connections/<%=connect.id%>/rsvp/Maybe'> Maybe </button>
+                                </h2>
+                            </form>
+                        <%}%>
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td class='eventDetails'>
+                        <h2><u>
+                                <%=connect.tagLine%>
+                            </u></h2>
+                        <h3>
+                            <%=connect.details%>
+                        </h3>
+                        <p><b>Hosted by:</b>
+                            <%= connect.hostName.firstName + ' ' +connect.hostName.lastName   %> <br><br> <b>When:</b>
+                                <%= connectDate %> <br><br>
+                                    <b>Timings: </b>
+                                    <%= connect.startTime %> to <%= connect.endTime %><br><br>
+                                            <b>Where: </b>
+                                            <%= connect.address%><br>
+                        </p>
+                    </td>
+                    <td><img class='categoryDance' src='<%=connect.image%>' alt='dance' /></td>
+
+                </tr>
+                <tr>
+                    <td class='eventDetails' colspan='2'>
+                        <h3> <i>
+                                Bring along your friends and family to amazing events in the city.
+                            </i>
+                        </h3>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </section>
+    <%-include('../partials/footer.ejs') %>

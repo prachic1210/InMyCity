@@ -1,0 +1,48 @@
+.categoryDetail{
+background-color: #f1d4b2;
+width: 98%;
+border: 1px #6f4b4e solid;
+height: 68%;
+padding: -3px;
+margin-left: 1%;
+border-radius: 8px;
+color: #4e3d3d;
+}
+
+.categoryDance{
+    width: 69%;
+    border: 2px solid;
+    float: right;
+    margin-right: 23px;
+}
+
+.eventDetails{
+    padding: 12px;
+    vertical-align: top; 
+    color: #4e3d3d;
+}
+
+.categoryTitleDesc{
+    color: #4e3d3d;
+}
+
+.categoryButton{
+float:right;
+margin-left: 10px;
+}
+
+.submitButton{
+    background:#4e3d3d;
+    border-style:outset;
+    border-color:grey;
+    height:50px;
+    width:100px;
+    font:15px arial,sans-serif;
+    text-shadow:none;
+}
+
+.submitButton a{
+    text-decoration: none;
+    color: bisque;
+}
+

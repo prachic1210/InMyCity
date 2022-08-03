@@ -1,0 +1,34 @@
+<%-include('../partials/header.ejs') %>
+    <section class='content'>
+        <!-- <h4><span class='eventsCategories'> Events and Categories </span> </h4> -->
+        <div class='containerCategories'>
+            <div class='cardCategory-left'>
+                <% if(connections.length>0 ){ %>
+                    <% topics.forEach(topic=> { if(topic != '' ){ %>
+                        <div class='card-left'>
+                            <div class='backgroundContext'>
+                                <div class='cardTitle'>
+                                    <h5> <span>
+                                            <%=topic %>
+                                        </span> </h5>
+                                </div><span class='spacer'></span><br />
+
+                                <% connections.forEach(c=> { if(c.topic === topic && topic != '' && c.name != '') {%>
+
+                                    <span class='spacer'></span><span class='cardDetail'>
+
+                                        <a href='/connections/<%= c.id %>'>
+                                            <%= c.name %>
+                                        </a> <br>
+
+                                    </span>
+                                    <% }}); %>
+                            </div>
+                        </div>
+                        <% } }); } else{ %>
+                            <h3>there are currently  no events to display.</h3>
+                            <% } %>
+            </div>
+        </div>
+    </section>
+    <%-include('../partials/footer.ejs') %>

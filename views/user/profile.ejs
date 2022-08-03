@@ -1,0 +1,70 @@
+<%-include('../partials/header.ejs') %>
+ <div class = "content">
+    <div class=''>
+        <div class ='profileEvent'>
+        <h2>Welcome, <%=user.firstName%></h2>
+        <h3><strong> <%= user.firstName%>'s Connections </strong></h3>
+        <%if(connections.length) {%>
+           
+            <table class='profileData'>
+                <tr>
+                    <th>Connections</th>
+                    <th>Category</th>
+                    <th> Actions</th>
+                </tr>
+            <%connections.forEach(connect => {%>
+            <tr>
+               <td class='userRow'> <p><%=connect.name%></p> </td>
+               <td class='userRow'> <%=connect.topic%></p> </td>
+               <td class='userRow'> <form><button type='submit' class='submitButtonX' formmethod='GET'
+                formaction='/connections/<%=connect.id%>/edit' value="update"> Update </button>
+                <button type='submit' class='submitButtonX' formmethod='POST'
+                    formaction='/connections/<%=connect.id%>/?_method=DELETE'> Delete </button>
+                </td>            
+            </form>
+                </h2>
+            </tr>
+
+            <%});
+        } else {%>
+            <p>You are currently not hosting  any connections</p>
+        <%}%>
+            </table>
+  
+    <br> <br>
+    <h3><strong><%= user.firstName%>'s RSVPs</strong></h3>
+        <%if(rsvpEvents.length) {%> 
+            <table class='profileData'>
+                <tr><td></td> </tr>
+                <tr>
+                    <th>Connections</th>
+                    <th>Category</th>
+                    <th>Going?</th>
+                    <th> Actions</th>
+                </tr>
+            <%rsvpEvents.forEach(event => {%>
+            <tr>
+               <td class='userRow'> <p><%=event.connection.name%></p> </td>
+               <td class='userRow'> <%=event.connection.topic%></p> </td>
+               <td class='userRow'> <%=event.response.toUpperCase() %></p> </td>
+               <td class='userRow'> <form><button type='submit' class='submitButtonX' formmethod='GET'
+                formaction='/connections/rsvp/<%=event.connection.id%>/edit' value="update"> Update </button>
+                <button type='submit' class='submitButtonX' formmethod='POST'
+                    formaction='/connections/rsvp/<%=event.id%>/?_method=DELETE'> Delete </button>
+                </td>            
+            </form>
+                </h2>
+            </tr>
+
+            <%});
+        } else {%>
+            <p><strong>You currently do not have rsvped any connections.</strong></p>
+        <%}%>
+    </table>
+</div>
+    </div>
+ </div>
+<br>
+<br>
+
+<%-include('../partials/footer.ejs') %>
